@@ -11,7 +11,7 @@ interface Restaurant {
   price: string;
   rating: number;
   reviewCount: number;
-  image: string;
+  image_url: string;
 }
 
 // const restaurants: Restaurant[] = [
@@ -74,15 +74,15 @@ const RestaurantScreen: React.FC = ( {navigation}:any ) => {
   const groupedRestaurants = [
     {
       title: 'Cost Effective',
-      data: filteredRestaurants.filter((restaurant) => restaurant.price === '$'),
+      data: filteredRestaurants.filter((restaurant:any) => restaurant.price === '$'),
     },
     {
       title: 'Bit Pricer',
-      data: filteredRestaurants.filter((restaurant) => restaurant.price === '$$'),
+      data: filteredRestaurants.filter((restaurant:any) => restaurant.price === '$$'),
     },
     {
       title: 'Big Spender',
-      data: filteredRestaurants.filter((restaurant) => restaurant.price === '$$$'),
+      data: filteredRestaurants.filter((restaurant:any) => restaurant.price === '$$$'),
     },
   ];
 
