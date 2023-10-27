@@ -44,10 +44,13 @@ const restaurants: Restaurant[] = [
   // Add more restaurants...
 ];
 
-const RestaurantScreen: React.FC = ( {navigation} ) => {
+const RestaurantScreen: React.FC = ( {navigation}:any ) => {
   const [searchText, setSearchText] = useState('');
 
-  // const {data, isError, isLoading} = useRestaurantsScreen()
+  const {data, isError, isLoading} = useRestaurantsScreen()
+  console.log("🚀 ------------------------------------------------🚀")
+  console.log("🚀 ~ file: RestaurantsScreen.tsx:51 ~ data:", data)
+  console.log("🚀 ------------------------------------------------🚀")
 
   // Filter restaurants based on search text and price
   const filteredRestaurants = restaurants.filter(
@@ -151,8 +154,6 @@ const styles = StyleSheet.create({
   restaurantImage: {
     width: 80,
     height: 80,
-    borderRadius: 40,
-    marginRight: 10,
   },
   restaurantInfoContainer: {
     flex: 1,

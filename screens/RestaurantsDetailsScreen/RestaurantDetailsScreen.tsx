@@ -18,6 +18,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
+import { useRestaurantDetailsScreenData } from './useRestaurantsDetailsScreen';
 
 interface Restaurant {
   id: number;
@@ -36,6 +37,11 @@ const restaurant: Restaurant = {
 };
 
 const RestaurantDetailsScreen: React.FC = () => {
+  const {data, isError, isLoading} = useRestaurantDetailsScreenData("kgOfzKLREO-x935D-flk2Q")
+  console.log("🚀 ------------------------------------------------------🚀")
+  console.log("🚀 ~ file: RestaurantDetailsScreen.tsx:41 ~ data:", data)
+  console.log("🚀 ------------------------------------------------------🚀")
+
   return (
     <View style={styles.container}>
       <MapView
