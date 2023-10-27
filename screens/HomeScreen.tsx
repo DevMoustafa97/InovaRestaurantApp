@@ -6,6 +6,7 @@ const HomeScreen = ({navigation}:any) => {
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
+      <Text></Text>
       <Button title='go to restaurants' onPress={()=>navigation.navigate("RestaurantsScreen")} />   
     </View>
   )

@@ -36,11 +36,29 @@ const restaurant: Restaurant = {
   longitude: -122.4324,
 };
 
-const RestaurantDetailsScreen: React.FC = () => {
-  const {data, isError, isLoading} = useRestaurantDetailsScreenData("kgOfzKLREO-x935D-flk2Q")
+const RestaurantDetailsScreen: React.FC = ({navigation, route}:any) => {
+  console.log("🚀 --------------------------------------------------------🚀")
+  console.log("🚀 ~ file: RestaurantDetailsScreen.tsx:40 ~ route:", route)
+  console.log("🚀 --------------------------------------------------------🚀")
+  const {data, isError, isLoading} = useRestaurantDetailsScreenData(route.params.id)
+  if (isError ) return (
+    <View style={styles.container}>
+      <Text>Error please try again ...</Text>
+    </View>
+  )
+
+    if (isLoading ) return (
+    <View style={styles.container}>
+      <Text>Loading ...</Text>
+    </View>
+  )
   console.log("🚀 ------------------------------------------------------🚀")
   console.log("🚀 ~ file: RestaurantDetailsScreen.tsx:41 ~ data:", data)
   console.log("🚀 ------------------------------------------------------🚀")
+  
+  // console.log("🚀 ------------------------------------------------------🚀")
+  // console.log("🚀 ~ file: RestaurantDetailsScreen.tsx:41 ~ data:", data)
+  // console.log("🚀 ------------------------------------------------------🚀")
 
   return (
     <View style={styles.container}>
