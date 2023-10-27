@@ -58,7 +58,7 @@ const RestaurantDetailsScreen: React.FC = ({navigation, route}:any) => {
         }}
       >
         <Marker
-          coordinate={{ latitude: restaurant.latitude, longitude: restaurant.longitude }}
+          coordinate={{ latitude: restaurant?.coordinates?.latitude, longitude: restaurant?.coordinates?.longitude }}
           title={restaurant.name}
         />
       </MapView>:null}
